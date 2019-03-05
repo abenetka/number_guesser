@@ -14,12 +14,19 @@
   <section class="guess-header">
     <h1 id="number-header">Number </h1><h1 id="guesser-header">Guesser</h1>
   </section>
+  <form class="guess-form">
+    <input type="text" placeholder="Enter a Number" id="enterGuess"><br>
+    <!-- <input type="text" placeholder="Enter a minimum number" id="minRange"><br>
+    <input type="text" placeholder="Enter a maximum number" id="maxRange"><br> -->
 
-    <form class="form">
-      <input type="text" placeholder="Enter a Number" id="enterGuess"><br>
-      <input type="submit" value="Submit" id="submitButton">
-      <input type="reset" value="Clear" id="clearButton">
-    </form>
+    <input type="submit" value="Submit" id="submitButton">
+    <input type="reset" value="Clear" id="clearButton">
+  </form>
+  <form class="range-form">
+    <input type="text" placeholder="Enter a minimum number" id="minRange" value = 1><br>
+    <input type="text" placeholder="Enter a maximum number" id="maxRange" value = 100><br>
+    <input type="submit" value="Submit" id="submitRangeButton">
+  </form>
   <section class="alert-container">
     <h3 class="guessDescrip"></h3>
     <h3 class="guessAlert"></h3>
