@@ -11,17 +11,37 @@ body {
   width: 100%;
   justify-content: center;
 }
+.range-container {
+  margin-top: 50px;
+}
 
 form {
   display: inline-block;
 }
-.alert-container {
+/* .alert-container {
   display: inline-flex;
   justify-content: center;
   width: 100%;
-}
+} */
 
 #enterGuess {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 150px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#minRange {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 150px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#maxRange {
   margin-top: 20px;
   margin-bottom: 20px;
   padding-right: 150px;
@@ -117,6 +137,29 @@ form {
 
 #resetButton:disabled {
   background-color: #D0D2D3;
+  color: #FFFFFF;
+  margin: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 30px;
+  border-radius: 20px;
+}
+
+#submitRangeButton {
+  background-color: #929497;
+  color: #FFFFFF;
+  margin: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 30px;
+  border-radius: 20px;
+}
+#submitRangeButton:hover {
+  background-color: #EB008B;
   color: #FFFFFF;
   margin: 15px;
   padding-top: 5px;
