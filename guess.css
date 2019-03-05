@@ -1,0 +1,15 @@
+body, html {
+  background-color: #4c5562;
+  color:#fff;
+}
+.guess-header
+
+.important-header {
+  font-size: 200%;
+  text-align: center;
+  color: gray;
+}
+
+#resetButton {
+  display: none;
+}
