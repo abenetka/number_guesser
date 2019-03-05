@@ -1,15 +1,71 @@
 body, html {
-  background-color: #4c5562;
-  color:#fff;
+  font-family: "Open Sans";
 }
-.guess-header
 
-.important-header {
-  font-size: 200%;
-  text-align: center;
-  color: gray;
+.guess-header {
+  padding: 2rem;
+  font-size: 3rem;
+  display: inline-flex;
+  background-color: #404041;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-container {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+.alert-container {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#number-header {
+  color: #ED458B;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+#guesser-header {
+  color: #E6E7E8;
+  font-weight: 300;
+}
+
+#submitButton {
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+#submitButton:hover {
+  background-color: #EB008B;
+  color: #FFFFFF;
+}
+
+
+
+#clearButton {
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+#clearButton:hover {
+  background-color: #EB008B;
+  color: #FFFFFF;
 }
 
 #resetButton {
   display: none;
+  background-color: #929497;
+  color: #FFFFFF;
+}
+#resetButton:hover {
+  background-color: #EB008B;
+  color: #FFFFFF;
+}
+
+#resetButton:disabled {
+  background-color: #D0D2D3;
+  color: #FFFFFF;
 }
