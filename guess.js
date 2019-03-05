@@ -14,23 +14,28 @@ var lowOrHigh = function() {
     $(".guessAlert").text("Please enter a number");
   }
   else if (diffTotal < 0) {
-    $(".guessAlert").text("That's too low");
+    $(".guessDecrip").text("Your last guess was");
     $(".previousGuess").text(enterGuess);
+    $(".guessAlert").text("That's too low");
   }
   else if (diffTotal > 0) {
-    $(".guessAlert").text("That's too high");
+    $(".guessDecrip").text("Your last guess was");
     $(".previousGuess").text(enterGuess);
+    $(".guessAlert").text("That's too high");
   }
   else {
-    $(".guessAlert").text("BOOM, You win!");
+    $(".guessDecrip").text("Your last guess was");
     $(".previousGuess").text(enterGuess);
+    $(".guessAlert").text("BOOM, You win!");
   }
 }
 
 $(document).ready(function(){
   $("#submitButton").click(function(enterGuess) {
+    $('#resetButton').prop("disabled", false);
     event.preventDefault();
     lowOrHigh();
+    $(".guessDescrip").show()
     $(".guessAlert").show()
     $('#resetButton').show()
   });
