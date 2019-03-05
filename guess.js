@@ -1,31 +1,25 @@
 $(document).ready(function(){
-
-  // var minRange = $("minRange").val()
-  // var maxRange =$("maxRange").val()
-  var enterGuess = $("#enterGuess").val();
-  //difference between Computer and User guess
-  var setGuess = function() {
+  function setGuess() {
     var minRange = $("#minRange").val();
     var maxRange =$("#maxRange").val();
     var min = parseInt(minRange);
     var max = parseInt(maxRange);
-    if (isNaN(min) && isNaN(max)) {
-      var computerGuess = Math.floor((Math.random() * 100) + 1);
+    if (isNaN(min) || isNaN(max)) {
+      $(".guessAlert").text("Please enter a number");
     }
-    else {
-      var computerGuess = Math.floor((Math.random() * (minGuess - maxGuess + 1) + minGuess));
+    else{
+      $(".rangeAlert").text(`Your number range is ${min} to ${max}`)
+      var compNum = Math.floor((Math.random() * (max - min + 1) + min));
     }
-    return computerGuess
-    debugger;
+    return compNum
   };
 
   var guessDiff = function(x, y) {
     return Math.round(x - y);
   };
 
-  var lowOrHigh = function() {
-    // var enterGuess = $("#enterGuess").val();
-    // var computerGuess = Math.floor((Math.random() * 100) + 1);
+  var lowOrHigh = function(computerGuess) {
+    var enterGuess = $("#enterGuess").val();
     var diffTotal = guessDiff(enterGuess, computerGuess);
     if (isNaN(enterGuess) || enterGuess === "") {
       $(".guessAlert").text("Please enter a number");
@@ -47,57 +41,20 @@ $(document).ready(function(){
     }
   };
 
-  $("#submitRangeButton").click(function(minRange, maxRange) {
-      setGuess();
-      // event.preventDefault();
-  });
-
-  $("#submitButton").click(function(enterGuess) {
-      // $('#resetButton').prop("disabled", false);
+  $("#submitRangeButton").click(function() {
       event.preventDefault();
-      setGuess();
-      debugger;
-      computerGuess
-      lowOrHigh();
+      const computerGuess = setGuess()
+    $("#submitButton").click(function() {
+      event.preventDefault();
+      lowOrHigh(computerGuess);
       $(".guessDescrip").show()
       $(".guessAlert").show()
       $('#resetButton').show()
     });
+  });
 
   $('#resetButton').click(function() {
     location.reload();
   });
 
 });
-
-
-
-
-
-
-//Low or High
-
-// var rangeLowOrHigh = function() {
-  //   var computerRangeGuess = Math.floor((Math.random() * (minGuess - maxGuess + 1) + minGuess));
-  //   var enterGuess = $("#enterGuess").val();
-  //   var diffRangeTotal = guessDiff(enterGuess, computerRangeGuess);
-  //
-  //   if (isNaN(enterGuess) || enterGuess === "") {
-    //     $(".guessAlert").text("Please enter a number");
-    //   }
-    //   else if (diffRangeTotal < 0) {
-      //     $(".guessDecrip").text("Your last guess was");
-      //     $(".previousGuess").text(enterGuess);
-      //     $(".guessAlert").text("That's too low");
-      //   }
-      //   else if (diffRangeTotal > 0) {
-        //     $(".guessDecrip").text("Your last guess was");
-        //     $(".previousGuess").text(enterGuess);
-        //     $(".guessAlert").text("That's too high");
-        //   }
-        //   else {
-          //     $(".guessDecrip").text("Your last guess was");
-          //     $(".previousGuess").text(enterGuess);
-          //     $(".guessAlert").text("BOOM, You win!");
-          //   }
-          // }
