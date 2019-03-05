@@ -7,6 +7,11 @@ var computerGuess = Math.floor((Math.random() * 5) + 1);
 //Number of attempts
 var numAttempted = 1;
 //Low or High
+var minGuess =
+var maxGuess =
+var maxAndMin = function(){
+  
+}
 var lowOrHigh = function() {
   var enterGuess = $("#enterGuess").val();
   var diffTotal = guessDiff(enterGuess, computerGuess);
