@@ -14,7 +14,7 @@ $(document).ready(function(){
     }
     return compNum
   };
-  
+
   function min() {
     var minRange = $("#minRange").val();
     var min = parseInt(minRange);
@@ -69,6 +69,10 @@ $(document).ready(function(){
       const startMin = min();
       const startMax = max();
       const computerGuess = setGuess();
+      $("#submitRangeButton").prop("disabled", true);
+      $("#submitButton").prop("disabled", false);
+      $(".range-container").hide();
+
     $("#submitButton").click(function() {
       event.preventDefault();
       lowOrHigh(computerGuess, startMin, startMax);
