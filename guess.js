@@ -14,6 +14,7 @@ $(document).ready(function(){
     }
     return compNum
   };
+  
   function min() {
     var minRange = $("#minRange").val();
     var min = parseInt(minRange);
@@ -27,8 +28,12 @@ $(document).ready(function(){
   };
 
   function updateRange(startMin, startMax) {
-    var newMin = (startMin += 10);
-    var newMax = (startMax -= 10);
+    let newMin = parseInt(startMin) - 10;
+    let newMax = parseInt(startMax) + 10;
+    $("minRange").val(newMin);
+    $("maxRange").val(newMax);
+    computerGuess = Math.floor((Math.random() * (newMax - newMin + 1) + newMin));
+    $(".rangeAlert").text(`Your new number range is ${newMin} to ${newMax}`);
   };
 
   var guessDiff = function(x, y) {
@@ -55,7 +60,7 @@ $(document).ready(function(){
       $(".lastGuess").text("Your last guess was");
       $(".previousGuess").text(enterGuess);
       $(".guessAlert").text("BOOM, You win!");
-      updateRange(startMin, startMax)
+      updateRange(startMin, startMax);
     }
   };
 
