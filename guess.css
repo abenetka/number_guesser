@@ -2,6 +2,14 @@ body {
   font-family: "Open Sans";
   text-align: center;
 }
+form {
+  display: inline-block;
+
+}
+
+input {
+  font-size: 1rem;
+}
 
 .guess-header {
   padding: 2rem;
@@ -14,15 +22,15 @@ body {
 .range-container {
   margin-top: 50px;
 }
-
-form {
-  display: inline-block;
+.range-container h3 {
+  font-size: 1.5rem;
 }
-/* .alert-container {
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
-} */
+
+.previousGuess {
+  font-size: 10rem;
+  color: #EB008B;
+
+}
 
 #enterGuess {
   margin-top: 20px;
