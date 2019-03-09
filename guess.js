@@ -93,33 +93,45 @@
       $(".guessAlert").text("That's too high");
     }
     else {
+      //jquery alert
       $(".lastGuess").text("Your last guess was");
+      //jquery to display the user's last guess
       $(".previousGuess").text(enterGuess);
+      //jquery alert
       $(".guessAlert").text("BOOM, You win!");
+      //calls function to change the range if they win
       updateRange(startMin, startMax);
     }
   };
-
+// jQuery function to make sure the DOM is ready to run the code
 $(document).ready(function(){
+  //jquery click functionfor submit range button
   $("#submitRangeButton").click(function() {
+    //prevents default action from being triggered
       event.preventDefault();
+      //sets const variable for min that won't be reassigned
       const startMin = min();
+      //sets const variable for max that won't be reassigned
       const startMax = max();
+      //sets computer guess to a method call
       const computerGuess = setGuess();
-      $("#submitRangeButton").prop("disabled", true);
-      $("#submitButton").prop("disabled", false);
+      //jquery function to hide the section where user can enter in a range
       $(".range-container").hide();
-
+      //jquery click functionfor submit button
     $("#submitButton").click(function() {
+      //prevents default action from being triggered
       event.preventDefault();
+      //pass in the needed variables into the lowhigh function
       lowOrHigh(computerGuess, startMin, startMax);
+      //jquery to show alerts
       $(".guessDescrip").show()
       $(".guessAlert").show()
       $('#resetButton').show()
     });
   });
-
+  //jquery to click the reset button
   $('#resetButton').click(function() {
+//reloads the page
     location.reload();
   });
 });
