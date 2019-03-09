@@ -25,11 +25,16 @@ input {
 .range-container h3 {
   font-size: 1.5rem;
 }
+.rangeAlert{
+  font-size: 1.5rem;
+}
 
 .previousGuess {
   font-size: 10rem;
   color: #EB008B;
-
+}
+.alert-container {
+  margin-top: 50px;
 }
 
 #enterGuess {
